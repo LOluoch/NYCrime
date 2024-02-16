@@ -7,12 +7,30 @@
 
 
 #!/usr/bin/env python
-from csv import reader
 import sys
 
+current_boro = None
+current_count = 0
+boro = None
+
 for line in reader(sys.stdin):
-    boro, crime = (line[13].strip(), line[7].strip())
-    if not boro or not crime or boro == "BORO_NM":
-        continue
+    line = line.strip()
+    boro, count = line.split('\t', 1)
+    try:
+      count = int(count)
+    except ValueError:
+      continue
+    if current_boro == boro:
+      current_count += count
+    else:
+      if current_boro: #Isn't this going to be false??? Shouldn't it be boro for first loop?
+        print ('%s\t%s' % (current_boro, current_count))
+      current_count = count
+      current_boro = boro
+      
+if current_boro == boro:
+  print ('%s\t%s' % (current_boro, current_count))
+      
+        
 
     # rest of the code goes here ...

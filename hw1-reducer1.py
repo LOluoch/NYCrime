@@ -13,7 +13,7 @@ current_boro = None
 current_count = 0
 boro = None
 
-for line in reader(sys.stdin):
+for line in sys.stdin:
     line = line.strip()
     boro, count = line.split('\t', 1)
     try:

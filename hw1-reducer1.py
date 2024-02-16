@@ -23,7 +23,7 @@ for line in sys.stdin:
     if current_boro == boro:
       current_count += count
     else:
-      if current_boro: #Isn't this going to be false??? Shouldn't it be boro for first loop?
+      if current_boro: 
         print ('%s\t%s' % (current_boro, current_count))
       current_count = count
       current_boro = boro

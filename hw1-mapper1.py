@@ -14,7 +14,7 @@ for line in reader(sys.stdin)[:5]:
     boro, crime = (line[13].strip(), line[7].strip()) # Loop through rows to get boro, crime vars
     if not boro or not crime or boro == "BORO_NM":
         continue
-     print(crime + " - " + boro)
+    print(crime + " - " + boro)
      
 
     # rest of the code goes here ...

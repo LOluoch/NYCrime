@@ -3,10 +3,10 @@ from csv import reader
 import sys
 
 boro_count, crime_type = dict(), dict()
-curr_boro, curr_count, curr_crime = None
+curr_boro, curr_count, curr_crime = None, None, None
 
-for line in reader(sys.stdin):
-    boro, crime, count = line.strip().split('/t', 2)
+for line in sys.stdin:
+    boro, crime, count = line.strip().split('\t', 2)
     count = int(count)
 
     if(boro == curr_boro):

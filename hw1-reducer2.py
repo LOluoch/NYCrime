@@ -5,9 +5,9 @@ import sys
 
 months = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August", 9: "September", 10: "October", 11: "November", 12: "December"}
 month_count = {}
-curr_month, curr_count = None
+curr_month, curr_count = None, None
 
-for line in reader(sys.stdin):
+for line in sys.stdin:
     month, count = line.strip().split('\t', 1)
     month = int(month)
     count = int(count)
@@ -15,7 +15,7 @@ for line in reader(sys.stdin):
     if(month == curr_month):
         curr_count += count
     else:
-        if month == curr_month:
+        if curr_month:
             month_count[months[curr_month]] = curr_count
         curr_month = month
         curr_count = count

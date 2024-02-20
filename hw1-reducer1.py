@@ -36,7 +36,7 @@ if current_boro == boro:
   
 keymax = max(zip(stats.values(), stats.keys()))[1]
 print("Most of the crimes were reported in " + keymax)
-print("Total number of crimes reported in " + keymax + "is " + stats[keymax]
+print("Total number of crimes reported in " + keymax + "is " + stats[keymax])
 
       
         

@@ -14,7 +14,7 @@ for line in reader(sys.stdin):
     date, crime = (line[5].strip(), line[7].strip()) 
     if not date or not crime or date == "RPT_DT":
         continue
-    print ('%s\t%s' % (date, crime))
+    print ('%s\t%s' % (crime, date))
      
 
     # rest of the code goes here ...

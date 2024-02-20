@@ -3,6 +3,7 @@
 #!/usr/bin/env python3
 import sys
 from datetime import datetime
+import calendar
 
 current_month = None
 current_count = 0
@@ -28,9 +29,9 @@ for line in sys.stdin:
         current_month = month
         stats[current_month] = current_count  
         
-
-
-#keymax = max(zip(stats.values(), stats.keys()))[1]
+    for m in calendar.month_name[1:]:
+      if m not in stats:
+        stats[m] = 0
 print("DANGEROUS WEAPONS reported per month:")
 for key, value in stats.items():
     print(key,value)

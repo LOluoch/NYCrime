@@ -36,7 +36,7 @@ if current_boro == boro:
   
 #keymax = max(zip(stats.values(), stats.keys()))[1]
 keymax = max(stats)
-print(keymax)
+print(stats)
 
       
         

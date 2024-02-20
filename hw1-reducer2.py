@@ -27,9 +27,10 @@ for line in sys.stdin:
         current_month = month
         stats[current_month] = current_count  
         
-    for m in calendar.month_name[1:]:
-      if m not in stats:
-        stats[m] = 0
+for m in calendar.month_name[1:]:
+    if m not in stats:
+    stats[m] = 0
+    
 print("DANGEROUS WEAPONS reported per month:")
 for key, value in stats.items():
     print(key,value)

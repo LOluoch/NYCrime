@@ -34,9 +34,9 @@ for line in sys.stdin:
 if current_boro == boro:
   print ('%s\t%s' % (current_boro, current_count))
   
-#keymax = max(zip(stats.values(), stats.keys()))[1]
-keymax = max(stats)
-print(stats)
+keymax = max(zip(stats.values(), stats.keys()))[1]
+#keymax = max(stats)
+print(keymax)
 
       
         

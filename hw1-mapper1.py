@@ -15,6 +15,7 @@ for line in reader(sys.stdin):
     if not boro or not crime or boro == "BORO_NM":
         continue
     print ('%s\t%s' % (boro, 1))
+    print ('%s\t%s' % (crime, 1))
      
 
     # rest of the code goes here ...

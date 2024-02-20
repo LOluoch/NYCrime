@@ -19,8 +19,8 @@ stats2 = {}
 for line in sys.stdin:
     line = line.strip()
     
-    boro, info = line.split('\t')
-    crime, count = info[i] for i in (0,1)
+    boro, statLine = line.split('\t')
+    crime, count = statLine
     print (crime)
     print (count)
     try:

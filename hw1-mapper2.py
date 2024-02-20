@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from csv import reader
 import sys
 
@@ -21,4 +21,3 @@ for line in reader(sys.stdin):
 # ..
 # ..
 # December ###
-

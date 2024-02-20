@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from csv import reader
 import sys
 
@@ -14,5 +14,3 @@ for line in reader(sys.stdin):
 # a) Where is most of the crime happening in New York? (e.g BRONX, QUEENS, BROOKLYN, etc.)
 # b) What is the total number of crimes reported in that location ?
 # c) What types of crime are happening in that location (show unique crime types) ?
-
-

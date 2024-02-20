@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from csv import reader
 import sys
 
@@ -42,4 +42,3 @@ for each_month in months.values():
 # ..
 # ..
 # December ###
-

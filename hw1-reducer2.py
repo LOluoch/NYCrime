@@ -31,6 +31,7 @@ for line in sys.stdin:
 
 
 #keymax = max(zip(stats.values(), stats.keys()))[1]
-print("DANGEROUS WEAPONS reported per month:\n")
-print(str(stats))
+print("DANGEROUS WEAPONS reported per month:")
+for key, value in stats.items():
+    print(key,value)
 

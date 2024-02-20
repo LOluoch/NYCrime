@@ -12,6 +12,7 @@ import sys
 current_boro = None
 current_count = 0
 boro = None
+stats = {}
 
 for line in sys.stdin:
     line = line.strip()
@@ -22,14 +23,21 @@ for line in sys.stdin:
       continue
     if current_boro == boro:
       current_count += count
+      stats[current_boro] = current_count
     else:
       if current_boro: 
         print ('%s\t%s' % (current_boro, current_count))
       current_count = count
       current_boro = boro
+      stats[current_boro] = current_count
       
 if current_boro == boro:
   print ('%s\t%s' % (current_boro, current_count))
+  
+#keymax = max(zip(stats.values(), stats.keys()))[1]
+keymax = max(stats)
+print(keymax)
+
       
         
 

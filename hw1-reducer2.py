@@ -1,27 +1,36 @@
-# Write a MapReduce program in Python 3 (hw1-mapper2.py and hw1-reducer2.py) that will answer the
-# following based on New York City Crime Data 2016. Run the program with two reduce tasks.
-# How many crimes of type “DANGEROUS WEAPONS” were reported on each month of the year 2016 ?
-# Sample Output:
-# Most of the crimes were reported in XYZ.
-# Total number of crimes reported in XYZ is ....
-# Crime types reported in XYZ are ....
-# DANGEROUS WEAPONS reported per month:
-# January ###
-# February ###
-# ..
-# ..
-# December ###
 
 
-#!/usr/bin/env python
-from csv import reader
+#!/usr/bin/env python3
 import sys
+from datetime import datetime
 
-for line in reader(sys.stdin):
-    boro, crime = (line[13].strip(), line[7].strip())
-    if not boro or not crime or boro == "BORO_NM":
-        continue
+current_month = None
+current_count = 0
+stats = {}
 
-    # rest of the code goes here ...
+for line in sys.stdin:
+    line = line.strip()
+    crime, date = line.split('\t', 1)
 
-    # rest of the code goes here ...
+    date_object = datetime.strptime(date, "%m/%d/%Y")
+    try:
+      month = date_object.strftime("%B")
+    except ValueError:
+      continue
+    
+    if crime == "DANGEROUS WEAPONS" and date_object.strftime("%Y")=="2016":
+      if current_month == month:
+        current_count += 1
+        stats[current_month] = current_count
+        
+      else:
+        current_count = 1
+        current_month = month
+        stats[current_month] = current_count  
+        
+
+
+#keymax = max(zip(stats.values(), stats.keys()))[1]
+print("DANGEROUS WEAPONS reported per month:\n")
+print(str(stats))
+

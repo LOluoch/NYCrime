@@ -20,7 +20,7 @@ for line in sys.stdin:
     line = line.strip()
     
     boro, info = line.split('\t')
-    crime, count = info [0], info [1]
+    crime, count = info[0], info[1]
     print (crime)
     print (count)
     try:

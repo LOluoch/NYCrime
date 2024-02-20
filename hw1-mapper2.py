@@ -1,27 +1,20 @@
-# Write a MapReduce program in Python 3 (hw1-mapper2.py and hw1-reducer2.py) that will answer the
-# following based on New York City Crime Data 2016. Run the program with two reduce tasks.
-# How many crimes of type “DANGEROUS WEAPONS” were reported on each month of the year 2016 ?
-# Sample Output:
-# Most of the crimes were reported in XYZ.
-# Total number of crimes reported in XYZ is ....
-# Crime types reported in XYZ are ....
-# DANGEROUS WEAPONS reported per month:
-# January ###
-# February ###
-# ..
-# ..
-# December ###
+# Write a MapReduce program in Python 3 (hw1-mapper1.py and hw1-reducer1.py) that will answer the
+# following based on New York City Crime Data 2016. Run the program with only one reduce task.
+# a) Where is most of the crime happening in New York? (e.g BRONX, QUEENS, BROOKLYN, etc.)
+# b) What is the total number of crimes reported in that location ?
+# c) What types of crime are happening in that location (show unique crime types) ?
 
 
-#!/usr/bin/env python
+
+#!/usr/bin/env python3
 from csv import reader
 import sys
 
 for line in reader(sys.stdin):
-    boro, crime = (line[13].strip(), line[7].strip())
-    if not boro or not crime or boro == "BORO_NM":
+    date, crime = (line[5].strip(), line[7].strip()) 
+    if not date or not crime or date == "RPT_DT":
         continue
-
-    # rest of the code goes here ...
+    print ('%s\t%s' % (date, crime))
+     
 
     # rest of the code goes here ...

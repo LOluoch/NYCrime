@@ -24,3 +24,6 @@ july = splitdata.filter(lambda x: re.search('^(07[\/]*)', x[5]))
 crimes = july.map(lambda x: (x[7],1))
 print("What are the top 3 crimes that were reported in the month of July ? \n")
 print(crimes.reduceByKey(lambda x,y: x+y).sortBy(lambda x: x[1],ascending=False).take(3))
+#c
+print("DANGEROUS WEAPONS crimes reported in the month of July \n")
+print(crimes.reduceByKey(lambda x,y: x+y).filter(lambda x: "DANGEROUS WEAPONS" in x).take(1))
